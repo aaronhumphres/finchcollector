@@ -1,5 +1,12 @@
 from django.shortcuts import render
 
+
+#temp finches for templates
+finches = [
+  {'name': 'Owl Bait', 'species': 'House Finch', 'description': 'loud, very loud', 'age': 3},
+  {'name': 'Chihuaha', 'breed': 'Desert Finch', 'description': 'thinks he is an eagle', 'age': 2},
+]
+
 # Define the home view
 def home(request):
   # Include an .html file extension - unlike when rendering EJS templates
