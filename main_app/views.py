@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Finch
 
 
 #temp finches for templates
@@ -20,5 +21,12 @@ def about(request):
 def finches_index(request):
   # We pass data to a template very much like we did in Express!
   return render(request, 'finches/index.html', {'finches': finches })
+
+# detail route for finches
+# finch_id is defined, expecting an integer, in our url
+def finches_detail(request, finch_id):
+    finch = Finch.objects.get(id=finch_id)
+
+    return render(request, 'finches/detail.html', { 'finch': finch })
 
 
